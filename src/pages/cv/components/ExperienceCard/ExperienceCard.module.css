@@ -1,0 +1,80 @@
+.item {
+  break-inside: avoid-page;
+}
+.item + .item {
+  margin-top: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.company {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.role {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.period {
+  flex-shrink: 0;
+  color: var(--cv-text-muted);
+  font-size: 0.9rem;
+}
+
+.summary {
+  margin: 0 0 0.75rem;
+  color: var(--cv-text-muted);
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.list li + li {
+  margin-top: 0.15rem;
+}
+
+.subProject {
+  margin: 0.9rem 0;
+  break-inside: avoid;
+}
+
+.subProjectName {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.subProjectName small {
+  font-size: inherit;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--cv-text-muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+.tag {
+  padding: 0.1rem 0.55rem;
+  background: var(--cv-tag-bg);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    gap: 0;
+  }
+}

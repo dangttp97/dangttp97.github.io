@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --main-font: "Lato", system-ui, sans-serif;
+  --display-font: "Be Vietnam Pro", var(--main-font);
+
+  color-scheme: light;
+  --color-bg: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-text: #172033;
+  --color-text-muted: #5b6475;
+  --color-border: #e4e8f0;
+  --color-accent: #3949ab;
+  --color-accent-soft: #eef0ff;
+  --color-shadow: rgb(23 32 51 / 5%);
+}
+
+/* Dark palette: picked by the user, or by the OS when nothing is picked. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #0f1420;
+  --color-surface: #171e2d;
+  --color-text: #e6e9f2;
+  --color-text-muted: #a3abbd;
+  --color-border: #2a3346;
+  --color-accent: #8c9eff;
+  --color-accent-soft: #222a4a;
+  --color-shadow: rgb(0 0 0 / 30%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: #0f1420;
+    --color-surface: #171e2d;
+    --color-text: #e6e9f2;
+    --color-text-muted: #a3abbd;
+    --color-border: #2a3346;
+    --color-accent: #8c9eff;
+    --color-accent-soft: #222a4a;
+    --color-shadow: rgb(0 0 0 / 30%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font: 16px/1.6 var(--main-font);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.15;
+}
+h2 {
+  font-size: 1.35rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+p {
+  margin: 0;
+}

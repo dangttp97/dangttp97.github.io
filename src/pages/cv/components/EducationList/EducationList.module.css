@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.school {
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .item {
+    flex-direction: column;
+    gap: 0;
+  }
+}

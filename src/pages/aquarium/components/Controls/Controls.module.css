@@ -1,0 +1,57 @@
+.controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: calc(100% - 2rem);
+}
+
+.sceneButton,
+.music {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 999px;
+  color: #fff;
+  background: rgb(0 0 0 / 30%);
+  backdrop-filter: blur(8px);
+  font: 700 0.95rem/1 var(--main-font);
+}
+
+.sceneButton {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.sceneButton:hover {
+  background: rgb(0 0 0 / 45%);
+}
+.sceneButton:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.music {
+  padding-right: 0.5rem;
+}
+
+.hint {
+  flex-basis: 100%;
+  margin: 0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  color: #fff;
+  background: rgb(0 0 0 / 55%);
+  font-size: 0.85rem;
+  text-align: right;
+}
+.hint[hidden] {
+  display: none;
+}

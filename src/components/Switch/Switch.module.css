@@ -1,0 +1,62 @@
+.switch {
+  --switch-w: 3.25rem;
+  --switch-h: 1.75rem;
+  --switch-pad: 0.2rem;
+  --switch-thumb: calc(var(--switch-h) - var(--switch-pad) * 2);
+
+  position: relative;
+  flex-shrink: 0;
+  width: var(--switch-w);
+  height: var(--switch-h);
+  padding: 0;
+  border: 1px solid var(--color-border, #e4e8f0);
+  border-radius: 999px;
+  background: var(--color-accent-soft, #eef0ff);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.switch:focus-visible {
+  outline: 2px solid var(--color-accent, #3949ab);
+  outline-offset: 2px;
+}
+.switch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.thumb {
+  position: absolute;
+  top: var(--switch-pad);
+  left: var(--switch-pad);
+  display: grid;
+  place-items: center;
+  width: var(--switch-thumb);
+  height: var(--switch-thumb);
+  border-radius: 50%;
+  background: var(--color-surface, #fff);
+  color: var(--color-accent, #3949ab);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+  transition: transform 0.2s ease;
+}
+.switch[data-checked="true"] .thumb {
+  transform: translateX(
+    calc(var(--switch-w) - var(--switch-thumb) - var(--switch-pad) * 2 - 2px)
+  );
+}
+
+.icon {
+  grid-area: 1 / 1;
+  display: grid;
+  transition: opacity 0.2s;
+}
+.icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+.on,
+.switch[data-checked="true"] .off {
+  opacity: 0;
+}
+.switch[data-checked="true"] .on {
+  opacity: 1;
+}

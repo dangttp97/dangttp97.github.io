@@ -1,0 +1,73 @@
+.preview {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: var(--color-accent-soft);
+}
+.badge {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  aspect-ratio: 1;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--provider-bg, var(--color-surface));
+  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+  transition: transform 0.25s ease;
+}
+:root[data-theme="dark"] .badge {
+  background: var(--provider-bg-dark, var(--provider-bg, var(--color-surface)));
+}
+:where(a:hover) .badge {
+  transform: translateY(-6px);
+}
+
+.npmjs {
+  --provider-bg: #fff;
+  --provider-bg-dark: #fff;
+}
+.github {
+  --provider-bg: #24292f;
+  --provider-bg-dark: #fff;
+}
+.gitlab {
+  --provider-bg: #fff;
+  --provider-bg-dark: #fff;
+}
+.bitbucket {
+  --provider-bg: #fff;
+  --provider-bg-dark: #fff;
+}
+.other {
+  --provider-bg: var(--color-accent-soft);
+  --provider-bg-dark: var(--color-accent-soft);
+}
+
+.icon {
+  max-width: 100%;
+  max-height: 100%;
+}
+.iconDark {
+  display: none;
+}
+:root[data-theme="dark"] .iconLight {
+  display: none;
+}
+:root[data-theme="dark"] .iconDark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .badge {
+    background: var(
+      --provider-bg-dark,
+      var(--provider-bg, var(--color-surface))
+    );
+  }
+  :root:not([data-theme="light"]) .iconLight {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .iconDark {
+    display: block;
+  }
+}

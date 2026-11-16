@@ -1,0 +1,18 @@
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.title {
+  font-size: 1rem;
+}
+
+.items {
+  margin-top: 0.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}

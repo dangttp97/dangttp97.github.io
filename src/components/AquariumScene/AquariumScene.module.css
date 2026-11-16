@@ -1,0 +1,393 @@
+.aquarium {
+  container-type: size;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  /* New stacking context so the water layers (z-index: -1) stay behind everything else. */
+  isolation: isolate;
+
+  --sand: #e8d3a1;
+  --seaweed: #2e8b57;
+  --rays: 0.9;
+  --ray-color: rgb(255 255 255 / 10%);
+  --sky-color: #fff3b0;
+  --sky-x: 78%;
+  --sky-size: 22cqh;
+  --sky-opacity: 0.8;
+  --glow: 0;
+  --brightness: 1;
+}
+
+.aquarium[data-scene="sunset"] {
+  --sand: #c9a27a;
+  --seaweed: #4f6b3a;
+  --rays: 0.7;
+  --ray-color: rgb(255 200 140 / 14%);
+  --sky-color: #ff8c42;
+  --sky-x: 18%;
+  --sky-size: 30cqh;
+  --sky-opacity: 0.9;
+  --brightness: 0.95;
+}
+
+.aquarium[data-scene="night"] {
+  --sand: #3a3428;
+  --seaweed: #1f4d3a;
+  --rays: 0;
+  --sky-color: #e8eefc;
+  --sky-x: 70%;
+  --sky-size: 14cqh;
+  --sky-opacity: 0.9;
+  --glow: 0.45;
+  --brightness: 0.7;
+}
+
+.aquarium[data-scene="deep"] {
+  --sand: #1f2a2a;
+  --seaweed: #0f3d3a;
+  --rays: 0;
+  --sky-opacity: 0;
+  --glow: 1;
+  --brightness: 0.6;
+}
+
+.water {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1.2s;
+}
+.waterDay {
+  background: linear-gradient(#8fd3f4, #2f7fb8 70%, #1d5d91);
+}
+.waterSunset {
+  background: linear-gradient(#f4a259, #8c4f8f 70%, #2b2350);
+}
+.waterNight {
+  background: linear-gradient(#1b3f63, #0f2742 70%, #050d1a);
+}
+.waterDeep {
+  background: linear-gradient(#0b3b4f, #06202b 70%, #010a10);
+}
+.aquarium[data-scene="day"] .waterDay,
+.aquarium[data-scene="sunset"] .waterSunset,
+.aquarium[data-scene="night"] .waterNight,
+.aquarium[data-scene="deep"] .waterDeep {
+  opacity: 1;
+}
+
+.aquarium::before {
+  content: "";
+  position: absolute;
+  inset: -20% 5% 30%;
+  background: repeating-linear-gradient(
+    100deg,
+    transparent 0 40px,
+    var(--ray-color) 40px 70px
+  );
+  filter: blur(6px);
+  transform: skewX(-12deg);
+  opacity: var(--rays);
+  transition: opacity 1.2s;
+}
+
+.aquarium::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle, rgb(120 255 230 / 80%) 0 1.5px, transparent 2.5px)
+      13px 7px / 97px 83px,
+    radial-gradient(circle, rgb(150 200 255 / 70%) 0 1px, transparent 2px) 41px
+      29px / 151px 127px,
+    radial-gradient(circle, rgb(190 255 200 / 60%) 0 2px, transparent 3px) 77px
+      61px / 211px 173px;
+  opacity: var(--glow);
+  transition: opacity 1.2s;
+  animation: twinkle 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.sky {
+  position: absolute;
+  top: calc(var(--sky-size) / -2);
+  left: var(--sky-x);
+  width: var(--sky-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sky-color);
+  box-shadow: 0 0 60px 20px var(--sky-color);
+  filter: blur(2px);
+  opacity: var(--sky-opacity);
+  transition:
+    left 1.2s ease,
+    width 1.2s ease,
+    top 1.2s ease,
+    opacity 1.2s,
+    background-color 1.2s,
+    box-shadow 1.2s;
+}
+
+.seaweed {
+  position: absolute;
+  bottom: 4cqh;
+  width: 12cqw;
+  height: 30cqh;
+}
+.seaweedLeft {
+  left: 4%;
+}
+.seaweedRight {
+  right: 6%;
+  height: 22cqh;
+}
+.blade {
+  fill: var(--seaweed);
+  transition: fill 1.2s;
+  transform-origin: bottom;
+  transform-box: fill-box;
+  animation: sway 4s ease-in-out infinite alternate;
+}
+.bladeSlow {
+  animation-duration: 6s;
+}
+
+.sand {
+  position: absolute;
+  inset: auto -5% -6cqh;
+  height: 14cqh;
+  border-radius: 50% 50% 0 0;
+  background-color: var(--sand);
+  transition: background-color 1.2s;
+}
+
+/*
+ * Characters: three nested layers, one animation each.
+ * .lane swims wall to wall (alternate), .dive moves divers up and down,
+ * .face flips the sprite exactly when .lane reaches a wall.
+ */
+.lane {
+  position: absolute;
+  left: 0;
+  top: var(--top);
+  width: 100%;
+  animation: patrol var(--speed) linear var(--delay) infinite alternate;
+}
+
+.dive {
+  animation: dive var(--dive-speed) ease-in-out var(--delay) infinite alternate;
+}
+
+.face {
+  width: var(--w);
+  /* One round trip takes 2 x --speed, so the flip cycle is twice as long. */
+  animation: turn calc(var(--speed) * 2) linear var(--delay) infinite;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  filter: brightness(var(--brightness));
+  transition: filter 1.2s;
+  animation: bob 3s ease-in-out infinite alternate;
+}
+.facesLeft {
+  scale: -1 1;
+}
+
+.faint {
+  --w: max(60px, 14cqw);
+  --top: 8%;
+  --speed: 24s;
+  --delay: -5s;
+  opacity: 0.75;
+}
+.gold {
+  --w: max(45px, 9cqw);
+  --top: 20%;
+  --speed: 18s;
+  --delay: -11s;
+}
+.shark {
+  --w: max(70px, 17cqw);
+  --top: 32%;
+  --speed: 11s;
+  --delay: -3s;
+}
+.turtle {
+  --w: max(55px, 11cqw);
+  --top: 58%;
+  --speed: 30s;
+  --delay: -17s;
+}
+
+.diver1 {
+  --w: max(65px, 15cqw);
+  --top: 18%;
+  --speed: 34s;
+  --delay: -8s;
+  --dive-speed: 7s;
+  --depth: 22cqh;
+}
+.diver2 {
+  --w: max(60px, 14cqw);
+  --top: 34%;
+  --speed: 41s;
+  --delay: -26s;
+  --dive-speed: 9s;
+  --depth: 26cqh;
+}
+.diver3 {
+  --w: max(55px, 13cqw);
+  --top: 48%;
+  --speed: 47s;
+  --delay: -14s;
+  --dive-speed: 6s;
+  --depth: 16cqh;
+}
+
+@keyframes patrol {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100cqw - var(--w)));
+  }
+}
+
+@keyframes dive {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 var(--depth);
+  }
+}
+
+@keyframes turn {
+  0% {
+    scale: 0 1;
+  }
+  2% {
+    scale: 1 1;
+  }
+  48% {
+    scale: 1 1;
+  }
+  50% {
+    scale: 0 1;
+  }
+  52% {
+    scale: -1 1;
+  }
+  98% {
+    scale: -1 1;
+  }
+  100% {
+    scale: 0 1;
+  }
+}
+
+@keyframes bob {
+  from {
+    translate: 0 -4px;
+  }
+  to {
+    translate: 0 4px;
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -20px;
+  width: var(--size, 10px);
+  aspect-ratio: 1;
+  border: 1.5px solid rgb(255 255 255 / 70%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 15%);
+  animation: rise var(--rise, 8s) ease-in var(--delay, 0s) infinite;
+}
+.bubble1 {
+  left: 9%;
+  --size: 10px;
+  --rise: 7s;
+  --delay: -1s;
+}
+.bubble2 {
+  left: 15%;
+  --size: 6px;
+  --rise: 9s;
+  --delay: -4s;
+}
+.bubble3 {
+  left: 31%;
+  --size: 8px;
+  --rise: 10s;
+  --delay: -7s;
+}
+.bubble4 {
+  left: 47%;
+  --size: 12px;
+  --rise: 8s;
+  --delay: -2s;
+}
+.bubble5 {
+  left: 62%;
+  --size: 7px;
+  --rise: 11s;
+  --delay: -6s;
+}
+.bubble6 {
+  left: 74%;
+  --size: 9px;
+  --rise: 7.5s;
+  --delay: -3s;
+}
+.bubble7 {
+  left: 86%;
+  --size: 5px;
+  --rise: 12s;
+  --delay: -9s;
+}
+.bubble8 {
+  left: 93%;
+  --size: 8px;
+  --rise: 9.5s;
+  --delay: -5s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(8px, -55cqh);
+  }
+  100% {
+    transform: translate(-4px, -110cqh);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  from {
+    rotate: -6deg;
+  }
+  to {
+    rotate: 6deg;
+  }
+}
+
+@keyframes twinkle {
+  from {
+    filter: brightness(0.7);
+  }
+  to {
+    filter: brightness(1.3);
+  }
+}

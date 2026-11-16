@@ -1,0 +1,17 @@
+.card {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.number {
+  color: var(--color-accent);
+  font-family: var(--display-font);
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  line-height: 1;
+}
+
+.label {
+  font-size: 1.15rem;
+  font-weight: 700;
+}

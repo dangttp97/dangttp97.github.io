@@ -1,0 +1,6 @@
+dist
+.yarn
+_backup
+Claude outputs
+public
+yarn.lock

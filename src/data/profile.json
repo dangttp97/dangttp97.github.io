@@ -1,0 +1,239 @@
+{
+  "profile": {
+    "name": "TRAN THANH PHUONG DANG",
+    "phone": "0942100476",
+    "email": "phuongdang012@gmail.com",
+    "github": "https://github.com/dangttp97",
+    "summary": [
+      "Senior Mobile Engineer with 6+ years of experience building production-grade mobile platforms across Fintech, Cryptocurrency, and MarTech domains.",
+      "iOS-focused Mobile Engineer with strong expertise in Swift and UIKit, and extensive experience integrating React Native into large-scale production applications. Hands-on experience delivering payment systems, lending platforms, real-time communication, and designing in-house SDKs with a focus on scalability, reliability, and long-term maintainability.",
+      "Experienced in owning projects end-to-end, making architectural decisions, and balancing in-house solutions with third-party integrations to reduce dependency risks in high-risk fintech environments."
+    ]
+  },
+  "skills": [
+    {
+      "category": "iOS Development",
+      "items": [
+        "Swift, Objective-C",
+        "UIKit, AutoLayout",
+        "iOS App Architecture (MVC, MVVM)",
+        "Memory management, retain cycle prevention",
+        "Performance profiling & debugging (Xcode Instruments)",
+        "Keychain, CoreData",
+        "Migration from Objective-C to Swift"
+      ]
+    },
+    {
+      "category": "React Native Development",
+      "items": [
+        "React Native (Redux Toolkit, Saga, Thunk)",
+        "iOS & Android Native Modules",
+        "JS–Native bridge design & thread handling",
+        "Performance optimization for hybrid apps",
+        "Offline-first & error-resilient data flows"
+      ]
+    },
+    {
+      "category": "React Development",
+      "items": [
+        "React",
+        "Redux Toolkit, Saga, Thunk",
+        "Customize React renderer for lightweight app"
+      ]
+    },
+    {
+      "category": "Custom Linux",
+      "items": [
+        "Custom Linux images for PXE-booted judge workers",
+        "Sandboxed code execution (isolate, nsjail)"
+      ]
+    },
+    {
+      "category": "Architecture & Performance",
+      "items": [
+        "In-house SDK / library design",
+        "Modular architecture & Git submodules",
+        "API abstraction & data layer design",
+        "Real-time communication (Socket.IO)",
+        "Custom form engines (HashMap & Graph-based data flow)"
+      ]
+    },
+    {
+      "category": "Backend & Tooling",
+      "items": [
+        "RESTful API integration",
+        ".NET Core",
+        "NestJS",
+        "Docker, Nginx, CI/CD, Redis, PostgreSQL",
+        "Git, Agile/Scrum"
+      ]
+    }
+  ],
+  "softSkills": [
+    "Strong ownership & problem-solving mindset",
+    "Clear communication with Product & Design teams",
+    "Mentoring fresher/junior developers",
+    "Experience leading mobile development teams",
+    "Able to break down complex systems into maintainable components"
+  ],
+  "experiences": [
+    {
+      "company": "Hitachi Digital Services LTD",
+      "role": "Full Stack Developer",
+      "period": "February 2026 – Present",
+      "summary": "An outsourcing company providing software development services for various clients.",
+      "subProjects": [
+        {
+          "name": "JPY-Pegged Stablecoin & Digital Asset Platform",
+          "role": "Lead React Developer",
+          "highlights": [
+            "Developed a web platform for a JPY-pegged stablecoin, enabling seamless fiat-to-crypto minting and burning via integrations with Tier-1 Japanese banking institutions for purchasing NFTs and digital assets.",
+            "Implemented real-time communication synchronizing transaction states, bank settlement updates, and operational workflows.",
+            "Architected a scalable state management system with Redux Toolkit to handle complex financial flows and support future feature expansion.",
+            "Collaborated closely with Product and Design teams to deliver a secure, intuitive user experience for fiat on/off-ramp transactions."
+          ]
+        },
+        {
+          "name": "Cardless Payment Platform",
+          "role": "Sub-Lead Mobile Developer",
+          "highlights": [
+            "Led the mobile development of the cardless payment platform, ensuring seamless integration with banking SDKs and stable release cycles.",
+            "Integrated bank payment SDKs (Japanese banks) using React Native with Native Modules, ensuring compatibility with strict banking SDK constraints.",
+            "Designed a resilient mobile architecture to minimize SDK conflicts, support stable releases, and reduce regression risks in production environments."
+          ]
+        }
+      ],
+      "technologies": [
+        "React Native",
+        "Redux Toolkit",
+        "Native Modules",
+        "React",
+        "Native Modules",
+        "Solidity",
+        "Java Spring Boot"
+      ]
+    },
+    {
+      "company": "Finviet Technology JSC",
+      "role": "React Native Developer",
+      "period": "February 2023 – January 2026",
+      "summary": "A B2B2C Fintech company focusing on payment, lending, and financial platforms.",
+      "subProjects": [
+        {
+          "name": "Payment Platform (POS & Student Card Payment)",
+          "role": "Lead Mobile Developer",
+          "highlights": [
+            "Led the mobile development of a B2B2C POS payment platform used in real-world payment scenarios (student card & POS flows).",
+            "Integrated bank payment SDKs (MB Bank & NAPAS via Yazara SDK) using React Native with Android Native Modules, ensuring compatibility with strict banking SDK constraints.",
+            "Designed a resilient mobile architecture to minimize SDK conflicts, support stable releases, and reduce regression risks in production environments.",
+            "Collaborated closely with Product and stakeholders to align technical solutions with operational and business requirements."
+          ]
+        },
+        {
+          "name": "Lending Platform",
+          "role": "Lead Mobile Developer",
+          "highlights": [
+            "Owned the mobile architecture and delivery of a Lending platform, from design to production rollout.",
+            "Designed and maintained the system as an in-house React Native SDK, managed via Git submodules, enabling safe integration with multiple host applications while avoiding version conflicts and dependency issues.",
+            "Built a custom lightweight data-fetching layer inspired by React Query to standardize API calls, caching, and error handling across the platform.",
+            "Designed a dynamic form engine using HashMap and Graph-based data structures, allowing flexible form configuration without hardcoded UI logic and supporting rapid business changes.",
+            "Mentored and coordinated a fresher/junior developer, ensuring code quality, knowledge transfer, and delivery consistency."
+          ]
+        },
+        {
+          "name": "Internal PG & Supervisor Management App",
+          "role": "Core Mobile Engineer",
+          "highlights": [
+            "Built an internal mobile application from scratch to support daily task coordination for PGs and Supervisors.",
+            "Implemented real-time communication using Socket.IO to synchronize task states and operational updates.",
+            "Designed a scalable Redux Toolkit-based state architecture to support future feature expansion and maintainability.",
+            "Worked closely with Product and Design teams to ensure smooth UX and operational efficiency."
+          ]
+        }
+      ],
+      "technologies": [
+        "React Native",
+        "Redux Toolkit",
+        "Native Modules",
+        "Socket.IO",
+        "Android Native",
+        "Git Submodule"
+      ]
+    },
+    {
+      "company": "Extracy Solutions",
+      "role": "iOS Engineer / React Native Engineer",
+      "period": "December 2021 – January 2023",
+      "highlights": [
+        "Designed and implemented iOS Native Modules in Swift to offload heavy RPC operations from the JavaScript thread, improving performance and stability.",
+        "Worked directly with iOS Keychain, threading, and native lifecycle management.",
+        "Optimized iOS-side execution to reduce memory pressure and bridge overhead."
+      ],
+      "technologies": [
+        "React Native",
+        "Redux Toolkit",
+        "Keychain",
+        "iOS Native Modules"
+      ]
+    },
+    {
+      "company": "Teso Soft",
+      "role": "React Native & iOS Engineer",
+      "period": "October 2020 – December 2021",
+      "highlights": [
+        "Migrated a production iOS application from Objective-C to Swift, refactoring legacy code and improving maintainability.",
+        "Maintained and extended iOS features using UIKit and MVVM architecture.",
+        "Implemented reactive flows with RxSwift on iOS."
+      ],
+      "technologies": [
+        "React Native",
+        "Redux Thunk",
+        "Firebase",
+        "Swift",
+        "UIKit",
+        "RxSwift"
+      ]
+    },
+    {
+      "company": "Ngoc Dung Group",
+      "role": "React Native Developer / .NET Developer",
+      "period": "April 2019 – April 2020",
+      "highlights": [
+        "Migrated a production app from Xamarin to React Native.",
+        "Developed APIs for beauty services, CRM, and ERP systems.",
+        "Built ERP desktop applications using XAF DevExpress & WPF."
+      ],
+      "technologies": [
+        "React Native",
+        "Redux Thunk",
+        ".NET",
+        "WPF",
+        "SQL Server",
+        "Entity Framework",
+        "DevExpress"
+      ]
+    },
+    {
+      "company": "LoveTrip Startup",
+      "role": "iOS Developer / Backend Developer",
+      "period": "2017 – January 2019",
+      "highlights": [
+        "Built a native iOS application in Swift based on an existing Android version.",
+        "Designed UI using UIKit and managed local persistence with CoreData.",
+        "Collaborated with backend APIs developed in .NET Core."
+      ],
+      "technologies": [
+        "Swift",
+        "UIKit",
+        "CoreData",
+        ".NET Core",
+        "Docker",
+        "SQL Server"
+      ]
+    }
+  ],
+  "education": {
+    "school": "Ho Chi Minh University of Pedagogy",
+    "period": "2015 – 2019"
+  }
+}

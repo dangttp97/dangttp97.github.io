@@ -1,0 +1,41 @@
+.preview {
+  display: grid;
+  place-items: end center;
+  height: 100%;
+  background: var(--color-accent-soft);
+}
+
+.paper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 62%;
+  height: 85%;
+  padding: 1.25rem 1.25rem 0;
+  border-radius: 10px 10px 0 0;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+  transition: transform 0.25s ease;
+}
+:where(a:hover) .paper {
+  transform: translateY(-6px);
+}
+
+.name {
+  margin-bottom: 0.4rem;
+  color: #1f1f1f;
+  font-family: var(--display-font);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.line,
+.lineShort {
+  height: 6px;
+  border-radius: 3px;
+  background: #e2e2e2;
+}
+.lineShort {
+  width: 60%;
+}

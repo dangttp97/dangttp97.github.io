@@ -1,0 +1,23 @@
+.page {
+  position: relative;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 18mm 20mm;
+  background: var(--cv-paper);
+  box-shadow: 0 4px 24px rgb(0 0 0 / 10%);
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 4rem 1.25rem 2rem;
+    box-shadow: none;
+  }
+}
+
+@media print {
+  .page {
+    max-width: none;
+    padding: 0;
+    box-shadow: none;
+  }
+}

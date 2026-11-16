@@ -1,0 +1,14 @@
+/* :where() keeps specificity at 0 so a className passed from outside always wins. */
+:where(.tags) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.tag {
+  padding: 0.2rem 0.75rem;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}

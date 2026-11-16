@@ -1,0 +1,24 @@
+.header {
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--cv-rule);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--cv-font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--cv-text-muted);
+}
+
+.contact {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

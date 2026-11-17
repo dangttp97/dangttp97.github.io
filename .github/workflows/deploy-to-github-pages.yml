@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-static-files:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,9 +37,9 @@ jobs:
         with:
           path: dist
 
-  deploy:
+  deploy-to-github-pages:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: build
+    needs: build-static-files
     runs-on: ubuntu-latest
     permissions:
       pages: write

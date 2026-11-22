@@ -21,11 +21,7 @@ export const ProjectCard = ({ project, index, media }: ProjectCardProps) => {
     media ?? ("url" in project && <ExternalProjectPreview url={project.url} />);
 
   return (
-    <Card
-      className={styles.card}
-      href={isLive ? href : undefined}
-      external={isExternal}
-    >
+    <Card className={styles.card} href={href} external={isExternal}>
       <div className={styles.media}>{preview}</div>
       <div className={styles.body}>
         <p className={styles.eyebrow}>

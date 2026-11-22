@@ -46,7 +46,7 @@ interface ProjectBase {
   title: string;
   description: string;
   tags: string[];
-  status: "live" | "soon";
+  status: "live" | "inprogress";
 }
 
 export type ProjectMeta = ProjectBase & ({ path: string } | { url: string });

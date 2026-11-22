@@ -33,12 +33,29 @@ export const PROJECTS_REGISTRY = [
     tags: [
       "TypeScript",
       "Networking",
+      "NodeJS",
       "React",
       "React Native",
       "Native Modules",
     ],
     url: "https://www.npmjs.com/package/react-native-rexios",
     status: "live",
+  },
+  {
+    id: "watari",
+    title: "@watari",
+    description:
+      "Successor to @rexios — a React/React Native data-fetching client featuring Koa-style middleware, dedupe, SWR caching, and pluggable stores (memory, Redux, Zustand).",
+    tags: [
+      "TypeScript",
+      "Networking",
+      "NodeJS",
+      "React",
+      "React Native",
+      "Native Modules",
+    ],
+    url: "https://github.com/dangttp97/watari",
+    status: "inprogress",
   },
 ] as const satisfies readonly ProjectMeta[];
 

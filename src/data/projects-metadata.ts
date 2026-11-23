@@ -19,7 +19,7 @@ export const PROJECTS_REGISTRY = [
   },
   {
     id: "koniwa",
-    title: "koniwa",
+    title: "@koniwa",
     description: "The tiny JSX-to-DOM renderer this site is built with.",
     tags: ["TypeScript", "JSX", "Vitest"],
     url: "https://github.com/dangttp97/koniwa",

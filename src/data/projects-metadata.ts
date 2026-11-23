@@ -1,4 +1,4 @@
-import type { ProjectMeta } from './types';
+import type { ProjectMeta } from "./types";
 
 export const PROJECTS_REGISTRY = [
   {

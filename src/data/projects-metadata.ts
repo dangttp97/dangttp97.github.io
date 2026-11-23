@@ -1,4 +1,4 @@
-import type { ProjectMeta } from "./types";
+import type { ProjectMeta } from './types';
 
 export const PROJECTS_REGISTRY = [
   {
@@ -18,11 +18,11 @@ export const PROJECTS_REGISTRY = [
     status: "live",
   },
   {
-    id: "jsx-lite-renderer",
-    title: "jsx-lite-renderer",
+    id: "koniwa",
+    title: "koniwa",
     description: "The tiny JSX-to-DOM renderer this site is built with.",
     tags: ["TypeScript", "JSX", "Vitest"],
-    url: "https://github.com/dangttp97/jsx-lite-renderer",
+    url: "https://github.com/dangttp97/koniwa",
     status: "live",
   },
   {

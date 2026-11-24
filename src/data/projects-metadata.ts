@@ -22,7 +22,7 @@ export const PROJECTS_REGISTRY = [
     title: "@koniwa",
     description: "The tiny JSX-to-DOM renderer this site is built with.",
     tags: ["DOM", "Hooks", "JSX", "Renderer", "Static Site", "Typescript"],
-    url: "https://github.com/dangttp97/koniwa",
+    url: "https://github.com/machiyajs/koniwa",
     status: "live",
   },
   {
@@ -54,7 +54,7 @@ export const PROJECTS_REGISTRY = [
       "React Native",
       "Native Modules",
     ],
-    url: "https://github.com/dangttp97/watari",
+    url: "https://github.com/machiyajs/watari",
     status: "inprogress",
   },
 ] as const satisfies readonly ProjectMeta[];
